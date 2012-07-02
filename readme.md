@@ -12,13 +12,13 @@ Install the js file into your jsdoc/plugins folder and update your conf.json fil
 
 In your js file add @externals { "name": "jQuery", "url": "http://www.jquery.com" }
 
-In your template add
+In the details template add
 ====================
 ```HTML
-<?js if (doc.externals && doc.externals.length) { ?>
+<?js if (data.externals && data.externals.length) { ?>
 	<h2 class="subsection-title">Externals</h2>
 	<ul>
-	<?js doc.externals.forEach(function(r) { ?>
+	<?js data.externals.forEach(function(r) { ?>
 		<li><a href="<?js= r.url ?>"><?js= r.name ?></a></li>
 	<?js }); ?>
 	</ul>
